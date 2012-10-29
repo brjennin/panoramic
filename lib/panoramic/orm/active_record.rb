@@ -29,6 +29,10 @@ module Panoramic
         def resolver
           Panoramic::Resolver.using self
         end
+
+        def most_recent_template_update
+          self.maximum(:updated_at)
+        end
       end
     end
   end
